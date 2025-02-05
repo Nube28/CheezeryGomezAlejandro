@@ -45,7 +45,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/button_start"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:id="@+id/button_get_start"
+        />
+
 
 
 </LinearLayout>
