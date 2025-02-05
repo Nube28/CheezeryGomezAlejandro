@@ -2,7 +2,7 @@
     <string name="app_name">PapuCheezery</string>
     <string name="welcome_text">Welcome to the Cheezery</string>
     <string name="welcome_description">Home of the most wonderful desserts ever seen (and tasted) by the human begin.</string>
-    <string name="button_start">Let's start!</string>
+    <string name="button_start">Lets start!</string>
     <string name="name">Name</string>
     <string name="last_name">Last name</string>
     <string name="e_mail">E-Mail</string>
