@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,9 +27,13 @@ class ProductosActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        agregarProductos()
+
+        var listview: ListView = findViewById(R.id.listVieww) as ListView
     }
 
-    fun agragarProductos(){
+    fun agregarProductos(){
         coldDrinks.add(Product("Caramel Frap", R.drawable.caramelfrap, "Caramel syrup meets coffee, milk and ice and whipped cream and buttery caramel sauce layer the love on top.", 5.0))
         coldDrinks.add(Product("Chocolate Frap", R.drawable.chocolatefrap, "Rich mocha-flavored sauce meets up with chocolaty chips, milk and ice for a blender bash.", 6.0))
         coldDrinks.add(Product("Cold Brew", R.drawable.coldbrew, "Created by steeping medium-to-coarse ground coffee in room temperature water for 12 hours or longer.", 3.0))
@@ -62,7 +69,15 @@ class ProductosActivity : AppCompatActivity() {
             var inflador = LayoutInflater.from(contexto)
             var vista = inflador.inflate(R.layout.producto_view, null)
 
-            
+            var imagen = vista.findViewById(R.id.productoImg) as ImageView
+            var nombre = vista.findViewById(R.id.productoNombre) as TextView
+            var descripcion = vista.findViewById(R.id.productoDescripcion) as TextView
+            var precio = vista.findViewById(R.id.productoPrecio) as TextView
+
+            imagen.setImageResource(prod.image)
+            nombre.setText(prod.name)
+            descripcion.setText(prod.descrption)
+            precio.setText("$${prod.price}")
         }
     }
 }
